@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriNova Technologies | Smart Farming</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8fbf6;
+    color: #263b2a;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px #00000010;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #218838;
+}
+
+nav a {
+    text-decoration: none;
+    color: #263b2a;
+    margin-left: 25px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #218838;
+}
+
+.hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background: linear-gradient(90deg, #102d19e8, #102d1950),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600')
+    center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #36a852;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #237c38;
+    transform: translateY(-3px);
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: #218838;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #68786a;
+}
+
+.about {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.services {
+    background: #edf6ed;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px #0000000c;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #218838;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.6;
+    color: #68786a;
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.benefit {
+    padding: 25px;
+}
+
+.benefit h3 {
+    color: #218838;
+    margin-bottom: 10px;
+}
+
+.cta {
+    text-align: center;
+    background: #1d6d34;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+}
+
+.cta .btn {
+    background: white;
+    color: #218838;
+}
+
+.contact {
+    text-align: center;
+    line-height: 2;
+}
+
+footer {
+    background: #14291a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+
+:root {
+    --green-950: #102b20;
+    --green-800: #1b5639;
+    --green-700: #24744a;
+    --green-500: #48a66a;
+    --lime: #d7ed9f;
+    --ink: #173327;
+    --muted: #64766d;
+    --surface: #ffffff;
+    --line: #e4ece5;
+    --shadow: 0 24px 70px #17332712;
+}
+
+html { scroll-padding-top: 88px; }
+
+body {
+    background: #f7f9f4;
+    color: var(--ink);
+    font-family: Inter, "Segoe UI", sans-serif;
+}
+
+header {
+    padding: 15px 7%;
+    background: #fbfcf9eb;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid #e8eee8;
+}
+
+.logo {
+    display: block;
+    flex: 0 0 auto;
+    width: 230px;
+    height: 58px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 56%;
+}
+
+nav { display: flex; align-items: center; gap: 28px; }
+
+nav a {
+    margin: 0;
+    color: #53665b;
+    font-size: 14px;
+    transition: color .2s ease;
+}
+
+nav a:hover { color: var(--green-700); }
+nav .nav-cta { color: var(--green-700); }
+
+.hero {
+    position: relative;
+    min-height: 640px;
+    overflow: hidden;
+    padding: 90px 7%;
+    background:
+        linear-gradient(90deg, #102b20f2 0%, #102b20dc 44%, #102b2050 100%),
+        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&auto=format&fit=crop&q=85') center 53%/cover;
+}
+
+.hero-content { max-width: 680px; }
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 22px;
+    color: var(--lime);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    width: 22px;
+    height: 1px;
+    background: currentColor;
+    content: "";
+}
+
+.hero h1 {
+    max-width: 650px;
+    margin-bottom: 20px;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 650;
+    letter-spacing: -2.7px;
+    line-height: 1.04;
+}
+
+.hero p {
+    max-width: 540px;
+    margin-bottom: 30px;
+    color: #e1ebe3;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+
+.btn {
+    padding: 14px 22px;
+    border: 1px solid var(--green-500);
+    border-radius: 8px;
+    background: var(--green-500);
+    font-size: 14px;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.btn:hover { background: var(--green-700); transform: translateY(-2px); }
+
+.btn-secondary {
+    border-color: #ffffff70;
+    background: #ffffff12;
+    color: white;
+}
+
+.btn-secondary:hover { background: #ffffff25; }
+
+section { padding: 88px 7%; }
+
+.section-title { margin-bottom: 42px; }
+
+.section-title h2 {
+    color: var(--green-950);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 650;
+    letter-spacing: -1.3px;
+}
+
+.section-title p { color: var(--muted); font-size: 16px; }
+
+.advisor-section { background: #edf3e9; }
+
+.advisor-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr);
+    gap: 48px;
+    align-items: center;
+    max-width: 1120px;
+    margin: auto;
+}
+
+.advisor-copy .eyebrow { color: var(--green-700); }
+
+.advisor-copy h2 {
+    margin-bottom: 16px;
+    color: var(--green-950);
+    font-size: clamp(30px, 4vw, 43px);
+    letter-spacing: -1.5px;
+    line-height: 1.12;
+}
+
+.advisor-copy > p { color: var(--muted); line-height: 1.75; }
+
+.advisor-note {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+    color: #5e7065;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.advisor-note span { flex: 0 0 auto; }
+.advisor-note span:last-child { flex: 1 1 auto; min-width: 0; }
+
+.advisor-card {
+    padding: 30px;
+    border: 1px solid #e5ece5;
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.advisor-card h3 { margin-bottom: 7px; color: var(--green-950); font-size: 19px; }
+.advisor-card-intro { margin-bottom: 23px; color: var(--muted); font-size: 13px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.form-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: #42584a;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-field select {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fbfcfa;
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+}
+
+.form-field select:focus-visible, .advisor-card button:focus-visible, a:focus-visible {
+    outline: 3px solid #91c96e;
+    outline-offset: 3px;
+}
+
+.advisor-card button {
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.recommendation {
+    display: none;
+    margin-top: 20px;
+    padding: 17px;
+    border: 1px solid #dcebd8;
+    border-radius: 10px;
+    background: #f4f8ef;
+}
+
+.recommendation.is-visible { display: block; }
+.recommendation h4 { margin-bottom: 7px; color: var(--green-800); font-size: 15px; }
+.recommendation p { color: #56685d; font-size: 13px; line-height: 1.6; }
+.recommendation .recommendation-caveat { margin-top: 8px; color: #758278; font-size: 11px; }
+
+.about {
+    max-width: 760px;
+    color: #596c60;
+    font-size: 16px;
+}
+
+.services { background: #f0f4ed; }
+
+.cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+
+.card {
+    padding: 28px;
+    border: 1px solid #e8ede7;
+    border-radius: 14px;
+    box-shadow: 0 8px 26px #17332708;
+    text-align: left;
+}
+
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.card .icon { font-size: 34px; }
+.card h3 { color: var(--green-800); font-size: 17px; }
+.card p { font-size: 14px; }
+
+.benefits { gap: 18px; }
+.benefit { border-radius: 12px; background: #fff; }
+.benefit h3 { color: var(--green-800); font-size: 16px; }
+.benefit p { color: var(--muted); font-size: 14px; }
+
+.cta { background: var(--green-800); }
+.cta h2 { font-size: 36px; letter-spacing: -1px; }
+.cta p { color: #e0ebe2; }
+.cta .btn { border-color: white; }
+.contact { color: #64766d; font-size: 15px; }
+.contact strong { color: var(--green-950); }
+
+footer { background: var(--green-950); color: #d8e4da; font-size: 13px; }
+footer p + p { margin-top: 7px; color: #a9bdad; }
+
+@media(max-width: 760px) {
+    header { padding: 13px 5%; }
+    nav { gap: 15px; }
+    nav a { font-size: 12px; }
+    .hero { min-height: 560px; padding: 75px 6%; background-position: 58% center; }
+    .hero h1 { letter-spacing: -1.5px; }
+    section { padding: 68px 6%; }
+    .advisor-wrap { grid-template-columns: 1fr; gap: 28px; }
+}
+
+@media(max-width: 480px) {
+    header { align-items: flex-start; }
+    nav { justify-content: flex-start; width: 100%; gap: 11px; }
+    nav a { font-size: 11px; }
+    .logo { width: 190px; height: 48px; }
+    .hero { min-height: 530px; }
+    .hero p { font-size: 15px; }
+    .form-grid { grid-template-columns: 1fr; gap: 13px; }
+    .advisor-card { padding: 22px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="#home" aria-label="AgriNova Technologies home">
+        <img src="assets/agrinova-logo.png" alt="AgriNova Technologies — Smart Solutions for a Greener Tomorrow">
+    </a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#advisor">Crop planner</a>
+        <a href="#services">Services</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="eyebrow">Technology rooted in nature</span>
+        <h1>Grow a better future, one field at a time.</h1>
+        <p>
+            Practical digital tools and field-aware insights to help farmers
+            make more confident decisions throughout the growing season.
+        </p>
+        <div class="hero-actions">
+            <a href="#advisor" class="btn">Try the crop planner</a>
+            <a href="#about" class="btn btn-secondary">Discover AgriNova</a>
+        </div>
+    </div>
+</section>
+
+<section class="advisor-section" id="advisor">
+    <div class="advisor-wrap">
+        <div class="advisor-copy">
+            <span class="eyebrow">A smarter place to start</span>
+            <h2>Find crops that fit your field.</h2>
+            <p>Share a few basics about your growing conditions to see a simple starting point for your crop research.</p>
+            <p class="advisor-note"><span aria-hidden="true">ⓘ</span><span>This interactive demo uses general, fixed rules — it is not a live AI system or a substitute for local agronomy advice.</span></p>
+        </div>
+        <form class="advisor-card" id="crop-form">
+            <h3>Crop fit finder</h3>
+            <p class="advisor-card-intro">Choose the conditions closest to your field.</p>
+            <div class="form-grid">
+                <div class="form-field">
+                    <label for="soil">Soil type</label>
+                    <select id="soil" name="soil" required>
+                        <option value="">Select soil</option>
+                        <option value="loamy">Loamy</option>
+                        <option value="clay">Clay</option>
+                        <option value="sandy">Sandy</option>
+                        <option value="black">Black soil</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="water">Water availability</label>
+                    <select id="water" name="water" required>
+                        <option value="">Select availability</option>
+                        <option value="reliable">Reliable irrigation</option>
+                        <option value="seasonal">Seasonal rainfall</option>
+                        <option value="limited">Limited water</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="season">Growing season</label>
+                    <select id="season" name="season" required>
+                        <option value="">Select season</option>
+                        <option value="kharif">Kharif (monsoon)</option>
+                        <option value="rabi">Rabi (winter)</option>
+                        <option value="summer">Summer</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="region">Region</label>
+                    <select id="region" name="region" required>
+                        <option value="">Select region</option>
+                        <option value="coastal">Coastal Andhra</option>
+                        <option value="inland">Inland Andhra</option>
+                        <option value="other">Other / not sure</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn">See a starting point</button>
+            <div class="recommendation" id="recommendation" role="status" aria-live="polite"></div>
+        </form>
+    </div>
+</section>
+
+<section id="about">
+    <div class="section-title">
+        <h2>About AgriNova</h2>
+        <p>Technology meets agriculture</p>
+    </div>
+
+    <div class="about">
+        <p>
+            AgriNova Technologies is an innovative AgriTech venture
+            focused on making farming smarter and more accessible.
+            Our goal is to support farmers through artificial intelligence,
+            useful agricultural insights and affordable digital solutions.
+            We aim to improve crop productivity, reduce farming costs
+            and create a sustainable future for agriculture.
+        </p>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Smart solutions for modern farmers</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>AI Crop Recommendations</h3>
+            <p>
+                Get intelligent crop suggestions based on
+                soil conditions and environmental factors.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌦️</div>
+            <h3>Weather Insights</h3>
+            <p>
+                Understand weather conditions and plan
+                farming activities more effectively.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Smart Farming Guidance</h3>
+            <p>
+                Access useful farming information and
+                guidance for better agricultural decisions.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Farm Productivity</h3>
+            <p>
+                Make informed decisions to reduce expenses
+                and improve crop productivity.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="benefits">
+    <div class="section-title">
+        <h2>Why Choose AgriNova?</h2>
+        <p>Making smart agriculture simple and affordable</p>
+    </div>
+
+    <div class="benefits">
+        <div class="benefit">
+            <h3>💰 Affordable</h3>
+            <p>Cost-effective farming solutions.</p>
+        </div>
+
+        <div class="benefit">
+            <h3>🤖 AI Powered</h3>
+            <p>Technology-driven farming insights.</p>
+        </div>
+
+        <div class="benefit">
+            <h3>🌍 Sustainable</h3>
+            <p>Supporting sustainable agriculture.</p>
+        </div>
+
+        <div class="benefit">
+            <h3>📈 Better Growth</h3>
+            <p>Helping farmers improve productivity.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Let's Grow Together!</h2>
+    <p>Join AgriNova and take the first step towards smarter farming.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+</section>
+
+<section id="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>We would love to hear from you</p>
+    </div>
+
+    <div class="contact">
+        <p><strong>AgriNova Technologies</strong></p>
+        <p>📍 Andhra Pradesh, India</p>
+        <p>📧 Email: agrinovatechnologies@gmail.com</p>
+        <p>🌱 Empowering Farmers Through Technology</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 AgriNova Technologies. All Rights Reserved.</p>
+    <p>Smart Farming | Better Future</p>
+</footer>
+
+<script>
+const cropForm = document.getElementById("crop-form");
+const recommendation = document.getElementById("recommendation");
+
+cropForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const soil = cropForm.elements.soil.value;
+    const water = cropForm.elements.water.value;
+    const season = cropForm.elements.season.value;
+    const region = cropForm.elements.region.value;
+    const crops = [];
+
+    if (season === "kharif") {
+        if (water === "reliable" || soil === "clay" || soil === "loamy") crops.push("paddy");
+        if (water !== "reliable" || soil === "black" || soil === "loamy") crops.push("maize");
+        if (water === "limited" || soil === "black" || soil === "sandy") crops.push("millets");
+        if (region === "coastal" && water !== "limited") crops.push("groundnut");
+    } else if (season === "rabi") {
+        if (water === "reliable" && (soil === "clay" || soil === "loamy")) crops.push("pulses");
+        if (soil === "black" || water === "limited") crops.push("chickpea");
+        if (water !== "limited") crops.push("maize");
+        if (region !== "coastal" && soil === "loamy") crops.push("groundnut");
+    } else {
+        if (water === "reliable") crops.push("vegetables");
+        if (water === "limited" || soil === "sandy") crops.push("millets");
+        if (soil === "black" || soil === "loamy") crops.push("groundnut");
+    }
+
+    const uniqueCrops = [...new Set(crops)].slice(0, 3);
+    const cropText = uniqueCrops.length ? uniqueCrops.join(", ") : "millets or pulses";
+    const reasons = [
+        `${soil} soil`,
+        water === "reliable" ? "reliable irrigation" : water === "seasonal" ? "seasonal rainfall" : "limited water",
+        season === "kharif" ? "Kharif season" : season === "rabi" ? "Rabi season" : "summer season"
+    ];
+
+    recommendation.innerHTML = `
+        <h4>Options to explore: ${cropText}</h4>
+        <p>These broad matches reflect your ${reasons.join(", ")}${region === "coastal" ? " in coastal Andhra" : region === "inland" ? " in inland Andhra" : ""}. Compare local varieties and current market conditions before deciding.</p>
+        <p class="recommendation-caveat">Illustrative suggestions only. Confirm suitability with your local agricultural extension office.</p>
+    `;
+    recommendation.classList.add("is-visible");
+});
+</script>
+
+</body>
+</html>
